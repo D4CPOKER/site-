@@ -1,0 +1,244 @@
+/* =============================
+   RESET BÁSICO
+   ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =============================
+   CONFIGURAÇÃO BASE DO HTML/BODY
+   ============================= */
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-image: url('../img/fundo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 120% auto;
+  background-attachment: scroll;
+
+  /* removi display: flex para não forçar layout flex vertical */
+}
+
+/* =============================
+   TOPO FIXO
+   ============================= */
+.Topo {background: #232323;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px #696969;
+  padding: 0 20px;
+  font-family: 'Uncial Antiqua', cursive;
+}
+
+/* =============================
+   CONTEÚDO PRINCIPAL
+   ============================= */
+.corpo {
+  margin-top: 120px; /* espaço para o topo fixo */
+  padding-bottom: 40px; /* um espaçamento para não encostar no rodapé */
+  height:1000px;
+  width:100%;
+  /* não flex, layout normal */
+}
+
+/* =============================
+   RODAPÉ FIXADO AO FIM
+   ============================= */
+.rodape {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px -4px 9px #696969;
+  width: 100%;
+  bottom:0;
+  /* sem position fixed ou absolute */
+}
+/* =============================
+   LOGO
+   ============================= */
+.img {
+  height: 80px;
+}
+
+/* =============================
+   MENU PRINCIPAL
+   ============================= */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding-left: 50px;
+}
+
+.menu-links {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-login {
+  display: flex;
+  align-items: center;
+}
+
+.menu_item {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  margin-right: 50px;
+  position: relative;
+  font-family: 'Uncial Antiqua', cursive;
+}
+
+.menu_item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.menu_item:hover::after {
+  width: 100%;
+}
+
+/* =============================
+   LOGIN E DROPDOWN
+   ============================= */
+.login-wrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid black;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: black;
+  color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  z-index: 999;
+  min-width: 100px;
+  height: 100px;
+}
+
+.login-wrapper:hover .dropdown-menu {
+  display: block;
+}
+
+/* =============================
+   CONTÉUDO PRINCIPAL SEÇÕES
+   ============================= */
+.img_lado {
+  width: 20%;
+  height: auto;
+}
+
+.centro {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  width: 60%;
+  min-height: 600px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* =============================
+   SCROLLBAR PERSONALIZADA
+   ============================= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* =============================
+   BOTÕES PADRÃO
+   ============================= */
+.b {
+  background: #464646;
+  height: 50px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+.b:hover {
+  background-color: #232323;
+}
+
+/* =============================
+   BOTÕES LOGIN || CADASTRO MENU LATERAL
+   ============================= */
+.menu_l {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  margin-right: 30px;
+}
+
+/* =============================
+   BOTÕES AO ESTAR LOGADO
+   ============================= */
+.b5 {
+  background: #464646;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 6px;
+  color: white;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.b5 span {
+  font-weight: bold;
+  font-size: 14px;
+}
