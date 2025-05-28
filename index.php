@@ -6,6 +6,7 @@
   <meta charset="UTF-8"> <!-- Suporte a caracteres especiais -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade em dispositivos móveis -->
   <title>Menu</title> <!-- Título da aba -->
+  <link rel="icon" type="image/png" href="img/l.png">
 
   <!-- Link para CSS externo (você precisa definir o nome do arquivo corretamente) -->
   <link rel="stylesheet" href="css/.css">
@@ -14,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
 </head>
 
-<body style="background:img/123.jfif;">
+<body >
   <div class="Topo"> <!-- Cabeçalho principal -->
     <img class="img" src="img/l.png" alt="Logo"> <!-- Logotipo no topo -->
 <div class="menu">
@@ -51,6 +52,8 @@
   <div class="corpo"> <!-- Área principal da página -->
     <!-- Conteúdo do site pode ser inserido aqui -->
   </div>
+</body>
+<footer>
   <div class="rodape"> <!-- Rodapé da página -->
 
     <p>
@@ -63,5 +66,5 @@
       Davi Camillo, Matheus Marafon e Gabriel Zarpelon do Nascimento.
     </p>
   </div>
-</body>
+</footer>
 </html>
