@@ -1,0 +1,310 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;                /* Remove margens padrão de todos os elementos */
+  padding: 0;               /* Remove espaçamentos internos padrão */
+  box-sizing: border-box;  /* Inclui padding e borda no cálculo do tamanho total dos elementos */
+}
+
+/* ===== BODY ===== */
+body.corpo {
+  font-family: 'Arial', sans-serif; /* Define a fonte usada no corpo da página */
+  background: radial-gradient(circle, #7a7a7a , #575757,  #232323, #000000); 
+  background-size: cover;           /* Faz a imagem ocupar toda a tela */
+  background-position: center;      /* Centraliza a imagem de fundo */
+  background-repeat: no-repeat;     /* Evita repetição da imagem de fundo */
+  color: #e0e0e0;                   /* Define a cor do texto como cinza claro */
+  min-height: 100vh;                /* Garante que o corpo ocupe no mínimo 100% da altura da tela */
+  padding: 40px;                    /* Espaço interno nas bordas do body */
+  display: flex;                    /* Ativa o layout flexível */
+  justify-content: center;         /* Centraliza o conteúdo horizontalmente */
+  align-items: center;             /* Centraliza o conteúdo verticalmente */
+  flex-direction: column;          /* Empilha os elementos verticalmente */
+}
+
+/* ===== TÍTULO ===== */
+.titulo {
+  font-size: 30px;           /* Define o tamanho da fonte do título */
+  margin-bottom: 30px;       /* Espaço abaixo do título */
+  color: white;              /* Cor do texto do título */
+}
+
+/* ===== FORMULÁRIO DE CADASTRO ===== */
+.form-login {
+  background: radial-gradient(circle, #343434, #232323, #1F1F1F); /* Fundo com gradiente circular escuro */
+  padding: 30px;              /* Espaçamento interno do formulário */
+  border-radius: 10px;        /* Bordas arredondadas */
+  box-shadow: 0px 0px 15px black; /* Sombra roxa ao redor do formulário */
+  height:620px;
+  max-height:700px;
+  width: 500px;                /* Ocupa 100% da largura disponível até o máximo */
+  display: flex;              /* Ativa layout flexível */
+  flex-direction: column;     /* Organiza os elementos em coluna */
+  align-items: center; 
+justify-content:space-evenly;  /* Centraliza os elementos horizontalmente */
+}
+.frase {
+	width:90%;
+	font-size:;
+}
+/* ===== INPUT COM LABEL FLUTUANTE ===== */
+.input-group {
+  position: relative;         /* Permite posicionar a label dentro do campo */
+  width: 90%;                /* Ocupa toda a largura do container pai */
+  margin-bottom: 25px;        /* Espaço abaixo do grupo de input */
+  justify-content:space-evenly;
+}
+
+.input {
+  all: unset;                 /* Remove todos os estilos padrões do input */
+  width: 100%;                /* Ocupa toda a largura disponível */
+  padding: 12px;              /* Espaçamento interno */
+  border: 1px solid gray;     /* Borda cinza */
+  border-radius: 6px;         /* Bordas arredondadas */
+  background-color: transparent; /* Fundo transparente */
+  color: white;               /* Cor do texto */
+  font-size: 15px;            /* Tamanho do texto */
+  transition: border 0.3s;    /* Animação suave ao mudar a borda */
+}
+
+.label {
+  position: absolute;         /* Posição absoluta dentro do input-group */
+  top: 12px;                  /* Distância do topo */
+  left: 12px;                 /* Distância da esquerda */
+  color: gray;                /* Cor inicial da label */
+  pointer-events: none;      /* Desativa interações com o mouse */
+  transition: 0.2s ease all;  /* Transição suave para movimentação e cor */
+  background: transparent; /* Fundo combinando com o input */
+  padding: 0 4px;             /* Espaço lateral para não cortar texto */
+  font-size: 15px;            /* Tamanho da fonte da label */
+}
+
+/* Animação da label ao foco ou preenchimento */
+.input:focus,
+.input:valid {
+  border: 1px solid white;     /* Destaca a borda em branco ao focar ou quando estiver preenchido */
+ 
+}
+
+.input:focus + .label,
+.input:valid + .label {
+  transform: translateY(-18px) scale(0.85);  /* Move a label para cima e reduz o tamanho */
+  color: white;                              /* Muda a cor da label para branco */
+  background:radial-gradient(circle, #343434, #232323, #1F1F1F);
+}
+
+/* Corrige preenchimento automático do Chrome */
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px transparent inset;  /* Remove o fundo amarelo do preenchimento automático */
+  -webkit-text-fill-color: white;             /* Define a cor do texto como branco */
+}
+
+/* ===== BOTÃO DE ENVIAR ===== */
+.botao {
+  background-color: #9B9B9B;   /* Cor de fundo roxa */
+  color: black;                /* Cor do texto */
+  border: none;                /* Remove a borda padrão */
+  padding: 12px;               /* Espaço interno */
+  border-radius: 5px;          /* Bordas arredondadas */
+  font-size: 1em;              /* Tamanho da fonte */
+  cursor: pointer;             /* Mostra ponteiro de clique */
+  transition: background-color 0.3s;  /* Transição suave de cor ao passar o mouse */
+  width: 100%;  
+  margin-bottom:10px;  /* Ocupa toda a largura disponível */
+}
+/* Estilo para a mensagem de erro ou sucesso */
+.mensagem {
+    text-align: center;
+    color: red;
+}
+
+/* Estilo para a frase dos termos */
+.frase {
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/* Links dentro da frase */
+.frase a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.frase a:hover {
+    text-decoration: underline;
+}
+
+/* Link para login abaixo do formulário */
+.login-link {
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.img {
+  position: absolute;   /* Permite posicionamento livre */
+  top: 20px;            /* Distância do topo */
+  left: 20px;           /* Distância da esquerda */
+  height: 60px;         /* Tamanho da imagem */
+  z-index: 10;          /* Garante que a imagem fique acima dos demais elementos */
+}
+
+.botao:hover {
+  background-color: #696969;   /* Muda para um roxo mais escuro ao passar o mouse */
+}
+.input-group2 select.input {
+  appearance: none; /* Remove a seta padrão (opcional, para estilização) */
+  background-color: transparent;
+  color: white;
+}
+/* ===== INPUT COM LABEL FLUTUANTE ===== */
+.input-group2 {
+  position: relative;         /* Permite posicionar a label dentro do campo */
+  width: 30%;                /* Ocupa toda a largura do container pai */
+  margin-bottom: 25px;        /* Espaço abaixo do grupo de input */
+  display:flex;
+  margin:8px;
+}
+a {
+	color:blue;
+^}
+.frase {
+	width:90%;
+	font-size:12px;
+}
+.datas{
+	display:flex;
+	width:60%;
+}
+.datas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+/* === Datas organizadas como no Discord === */
+.datas {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 25px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+/* Cada select ocupa 30% com mínimo */
+.input-group2 {
+  position: relative;
+  width: 30%;
+  min-width: 100px;
+}
+
+/* Select estilizado */
+.input-group2 select.input {
+  appearance: none;
+  background-color: transparent;
+  color: white;
+  padding: 12px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 100%;
+  transition: border 0.3s;
+}
+
+/* Hover/focus do select */
+.input-group2 select.input:focus {
+  border: 1px solid white;
+}
+
+/* Label flutuante */
+.input-group2 .label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: gray;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background: radial-gradient(circle, #343434, #232323, #1F1F1F);
+  padding: 0 4px;
+  font-size: 15px;
+}
+
+/* Label flutua ao focar ou preencher */
+.input-group2 select.input:focus + .label,
+.input-group2 select.input:valid + .label {
+  transform: translateY(-18px) scale(0.85);
+  color: white;
+}
+
+.input::-webkit-scrollbar {
+  width: 8px;
+}
+
+.input::-webkit-scrollbar-track {
+  background: #232323;
+  border-radius: 4px;
+}
+
+.input::-webkit-scrollbar-thumb {
+  background-color: #8C11B6;
+  border-radius: 4px;
+}
+
+.input::-webkit-scrollbar-thumb:hover {
+  background-color: #A63BD4;
+}
+select.input option {
+  background-color: black;
+  color: white;
+}
+select {
+  max-height: 40px; /* controla altura do select (campo) */
+}/* ===== ANIMAÇÃO DE ENTRADA ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-login {
+  animation: fadeInUp 1s ease-in-out both;
+}
+/* ESTILOS PARA A BARRA DE ROLAGEM (SOMENTE NO CHROME/EDGE) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

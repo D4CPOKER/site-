@@ -1,0 +1,182 @@
+/* RESET BÁSICO PARA PADRONIZAÇÃO ENTRE NAVEGADORES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* IMAGEM DE FUNDO APLICADA AO BODY */
+body {
+  background-image: url('../img/image.png'); /* Caminho da imagem */
+  background-size: cover; /* A imagem cobre toda a tela */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  font-family: 'Arial', sans-serif; /* Fonte padrão */
+}
+
+/* TOPO FIXO NO TOPO DA TELA */
+.Topo {
+  background: radial-gradient(circle, #232323, #111111, #000000); /* Gradiente escuro */
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Garante que o topo fique acima dos outros elementos */
+  border-bottom: 5px solid #780F9C; /* Linha dourada abaixo */
+  padding: 0 20px;
+  font-family:'UncialAntiqua', regular;
+}
+
+/* LOGO */
+.img {
+  height: 60px; /* Tamanho da imagem/logo */
+}
+
+/* MENU PRINCIPAL */
+.menu {
+  display: flex;
+  gap: 20px; /* Espaço entre os itens */
+}
+
+.menu_item {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  position: relative;
+   font-family: 'Uncial Antiqua', cursive;
+}
+
+
+/* LINHA BRANCA ANIMADA AO PASSAR O MOUSE */
+.menu_item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background: #780F9C;
+  transition: width 0.3s;
+}
+
+.menu_item:hover::after {
+  width: 100%; /* A linha aparece inteira ao passar o mouse */
+}
+
+/* AVATAR E MENU DE LOGIN */
+.login-wrapper {
+  position: relative;
+}
+
+/* Estilo do avatar (imagem de usuário) */
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Deixa a imagem redonda */
+  border: 3px solid black;
+  cursor: pointer;
+}
+
+/* Esconde o checkbox que controla o menu suspenso */
+.toggle-menu {
+  display: none;
+}
+
+/* MENU SUSPENSO DO LOGIN */
+.dropdown-menu {
+  display: none; /* Escondido por padrão */
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Links do menu suspenso */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background: #eee;
+}
+
+/* Quando o checkbox está marcado, mostra o menu */
+.toggle-menu:checked + .avatar-label + .dropdown-menu {
+  display: block;
+}
+
+/* CORPO PRINCIPAL COM FLEXBOX */
+.corpo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 6%; /* Espaço para não cobrir o topo */
+  gap: 20px;
+}
+
+/* IMAGENS LATERAIS */
+.img_lado {
+  width: 20%;
+  height: auto;
+}
+
+/* CONTEÚDO CENTRAL DA PÁGINA */
+.centro {
+  background-color: rgba(0, 0, 0, 0.85); /* Fundo preto semi-transparente */
+  color: white;
+  width: 60%;
+  height: 2000px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* RODAPÉ COM TEXTO E LINKS */
+.rodape {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px solid #780F9C;
+  border-top: 5px solid #780F9C;
+}
+
+.rodape a {
+  color: #ddd;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ESTILOS PARA A BARRA DE ROLAGEM (SOMENTE NO CHROME/EDGE) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
