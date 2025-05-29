@@ -55,16 +55,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Título da Página</title>
     <link rel="stylesheet" href="css/l.css" />
+	<link rel="icon" type="image/png" href="img/l.png">
+	
 </head>
 <body class="corpo">
-    
     <!-- Botão para voltar à página inicial -->
     <a href="index.php" class="voltar">
         <img class="img" src="img/l.png" alt="Logo" />
     </a>
 
     <div class="fund">
-        <h3 class="titulo">Seja bem-vindo de volta! (͠≖ ͜ʖ͠≖)👌</h3>
+        <h3 class="titulo">Seja bem-vindo de volta!</h3>
         <h4 class="sub_tit">Estamos muito animados em ver você novamente!</h4>
 
         <!-- Formulário de login -->
