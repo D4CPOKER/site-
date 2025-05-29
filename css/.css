@@ -15,11 +15,13 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-image: url('../img/fundo.png');
+  position:relative;
+  overflow-x: hidden;
+  /*background-image: url('../img/fundo.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 120% auto;
-  background-attachment: scroll;
+  background-attachment: scroll;*/
 
   /* removi display: flex para não forçar layout flex vertical */
 }
@@ -27,7 +29,8 @@ html, body {
 /* =============================
    TOPO FIXO
    ============================= */
-.Topo {background: #232323;
+.Topo {
+  background: #111111;
   height: 100px;
   width: 100%;
   display: flex;
@@ -39,7 +42,6 @@ html, body {
   z-index: 1000;
   box-shadow: 0px 4px 6px #696969;
   padding: 0 20px;
-  font-family: 'Uncial Antiqua', cursive;
 }
 
 /* =============================
@@ -66,6 +68,15 @@ html, body {
   bottom:0;
   /* sem position fixed ou absolute */
 }
+.link_rodape {
+	color:gray;
+	text-decoration:none;
+	
+}
+.link_rodape:hover {
+	text-decoration:line;
+	
+}
 /* =============================
    LOGO
    ============================= */
@@ -78,8 +89,9 @@ html, body {
    ============================= */
 .menu {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+    align-items: center;
+    justify-content: flex-start;
+
   width: 100%;
   padding-left: 50px;
 }
@@ -93,31 +105,44 @@ html, body {
   display: flex;
   align-items: center;
 }
-
 .menu_item {
+  position: relative;
+  display: inline-block;
   color: white;
   text-decoration: none;
-  font-size: 14px;
-  margin-right: 50px;
-  position: relative;
-  font-family: 'Uncial Antiqua', cursive;
+  padding: 10px 20px;
+  z-index: 1;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
-.menu_item::after {
+.menu_item::before {
   content: '';
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  height: 2px;
-  width: 0;
-  background: white;
-  transition: width 0.3s ease;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.menu_item:hover::after {
-  width: 100%;
+.menu_item:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
+
+.menu_item:hover {
+  color: #ffcc00;
+}
+
 
 /* =============================
    LOGIN E DROPDOWN
@@ -137,7 +162,7 @@ html, body {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 45px;
+  top: 50px;
   right: 0;
   background: black;
   color: white;
@@ -146,7 +171,7 @@ html, body {
   border-radius: 6px;
   z-index: 999;
   min-width: 100px;
-  height: 100px;
+  height: 150px;
 }
 
 .login-wrapper:hover .dropdown-menu {
@@ -192,27 +217,24 @@ html, body {
 }
 
 /* =============================
-   BOTÕES PADRÃO
+   BOTÕES LOGIN || CADASTRO MENU LATERAL
    ============================= */
 .b {
   background: #464646;
   height: 50px;
-  width: 80px;
+  width: 115px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: 20px;
   color: white;
   transition: background-color 0.5s ease;
 }
 
 .b:hover {
-  background-color: #232323;
+  background-color: #7a7a7a;
 }
 
-/* =============================
-   BOTÕES LOGIN || CADASTRO MENU LATERAL
-   ============================= */
 .menu_l {
   color: black;
   text-decoration: none;
@@ -220,7 +242,15 @@ html, body {
   font-weight: bold;
   font-family: 'Arial', sans-serif;
   margin-right: 30px;
+  padding: 5px 3px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
+
+.menu_l:hover {
+  color: #444;
+  transform: scale(1.05);
+}
+
 
 /* =============================
    BOTÕES AO ESTAR LOGADO
@@ -232,6 +262,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  border:5px black;
   border-radius: 6px;
   color: white;
   padding: 0 10px;
@@ -242,3 +273,16 @@ html, body {
   font-weight: bold;
   font-size: 14px;
 }
+#video-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Encaixa sem cortar */
+  z-index: -1;
+  opacity: 0.7
+  pointer-events: none;
+}
+
+
