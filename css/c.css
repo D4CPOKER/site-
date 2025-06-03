@@ -2,117 +2,131 @@
    RESET GERAL
 ========================= */
 * {
-  margin: 0;                /* Remove margens padrão */
-  padding: 0;               /* Remove preenchimento padrão */
-  box-sizing: border-box;   /* Inclui padding e border no cálculo total do elemento */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* =========================
    ESTILO GLOBAL DO BODY
 ========================= */
 body.corpo {
-  font-family: 'Arial', sans-serif;                      /* Fonte padrão */
-  color: #e0e0e0;                                        /* Cor padrão do texto */
-  min-height: 100vh;                                     /* Altura mínima de 100% da viewport */
-  padding: 40px;                                         /* Espaço interno */
-  display: flex;                                         /* Usa flexbox */
-  flex-direction: column;                                /* Coloca elementos em coluna */
-  justify-content: center;                               /* Centraliza verticalmente */
-  align-items: center;                                   /* Centraliza horizontalmente */
-  min-height: 100%;
+  font-family: 'Arial', sans-serif;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-image: url('../img/fundo.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 120% auto;
-  background-attachment: scroll;
-
-  /* removi display: flex para não forçar layout flex vertical */
-  
 }
 
-
-/* =========================
-   LOGO SUPERIOR FIXA
-========================= */
-.voltar {
-  position: absolute;   /* Posição livre na tela */
-  top: 20px;            /* Distância do topo */
-  left: 20px;           /* Distância da esquerda */
-  height: 60px;         /* Tamanho da imagem */
-  z-index: 10;          /* Sobrepõe outros elementos */
-  color:white;
-  text-decoration:none;
-}
-.img{
-	height:60px;
-}
-
-/* =========================
-   TÍTULO DO FORMULÁRIO
-========================= */
-.titulo {
-  font-size: 30px;         /* Tamanho da fonte */
-  margin-bottom: 30px;     /* Espaço abaixo do título */
-  color: white;            /* Cor do texto */
-  text-align:center;
+#video-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+  opacity: 1;
+  pointer-events: none;
 }
 
 /* =========================
    FORMULÁRIO DE LOGIN
 ========================= */
 .form-login {
-  background: #232323; /* Fundo escuro com gradiente */
-  padding: 30px;                /* Espaçamento interno */
-  border-radius: 10px;          /* Arredondamento das bordas */
-  box-shadow: 0px 0px 15px black; /* Sombra externa */
-  width: 500px;                 /* Largura fixa */
-  height: 700px;                /* Altura do formulário */
-  max-height: 700px;            /* Altura máxima */
-  display: flex;                /* Ativa flexbox */
-  flex-direction: column;       /* Coluna */
-  align-items: center;          /* Alinhamento horizontal */
-  justify-content: space-evenly;/* Espaço uniforme entre os filhos */
-  animation: fadeInUp 1s ease-in-out both; /* Animação de entrada */
-  margin-top:30px;
+  position: relative; /* Permite posicionar elementos absolutos internamente */
+  background: #232323;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px black;
+  width: 500px;
+  height: 660px;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  animation: fadeInUp 1s ease-in-out both;
+  margin-top: 10px;
+}
+
+/* =========================
+   SETA VOLTAR (AJUSTADA)
+========================= */
+.voltar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  z-index: 10;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  border-radius: 0 0 8px 0;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.voltar:hover {
+  color: white;
+}
+
+.seta {
+  height: 60px;
+}
+
+/* =========================
+   TÍTULO DO FORMULÁRIO
+========================= */
+.titulo {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: white;
+  text-align: center;
 }
 
 /* =========================
    GRUPOS DE INPUT COM LABEL FLUTUANTE
 ========================= */
 .input-group {
-  position: relative;       /* Permite posicionamento da label dentro */
-  width: 90%;               /* Largura total */
-  margin-bottom: 25px;      /* Espaço inferior */
+  position: relative;
+  width: 90%;
+  margin-bottom: 25px;
 }
 
 .input {
-  all: unset;                 /* Remove todos os estilos padrões */
-  width: 100%;                /* Preenche toda a largura */
-  padding: 12px;              /* Espaçamento interno */
-  border: 1px solid gray;     /* Borda cinza */
-  border-radius: 6px;         /* Bordas arredondadas */
-  background-color: transparent; /* Fundo transparente */
-  color: white;               /* Texto branco */
-  font-size: 15px;            /* Tamanho da fonte */
-  transition: border 0.3s;    /* Animação de transição */
+  all: unset;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+  transition: border 0.3s;
 }
 
 .label {
-  position: absolute;         /* Posição flutuante dentro do grupo */
+  position: absolute;
   top: 12px;
   left: 12px;
   color: gray;
-  pointer-events: none;       /* Não interagível */
+  pointer-events: none;
   transition: 0.2s ease all;
   background: transparent;
   padding: 0 4px;
   font-size: 15px;
 }
 
-/* Ativa estilo quando input está focado ou preenchido */
 .input:focus,
 .input:valid {
   border: 1px solid white;
@@ -125,10 +139,9 @@ body.corpo {
   background: #232323;
 }
 
-/* Ajuste do autofill no Chrome */
 input:-webkit-autofill {
   box-shadow: 0 0 0 1000px transparent inset;
-  -webkit-text-fill-color: Black;
+  -webkit-text-fill-color: black;
 }
 
 /* =========================
@@ -153,7 +166,7 @@ input:-webkit-autofill {
 }
 
 .input-group2 select.input {
-  appearance: none;             /* Remove seta padrão */
+  appearance: none;
   background-color: transparent;
   color: white;
   padding: 12px;
@@ -280,18 +293,20 @@ select {
   background: #555;
 }
 
-/* Scroll personalizado dentro de campos input (select etc) */
 .input::-webkit-scrollbar {
   width: 8px;
 }
+
 .input::-webkit-scrollbar-track {
   background: #232323;
   border-radius: 4px;
 }
+
 .input::-webkit-scrollbar-thumb {
-  background-color: #8C11B6;
+  background-color: #666;
   border-radius: 4px;
 }
+
 .input::-webkit-scrollbar-thumb:hover {
   background-color: gray;
 }
