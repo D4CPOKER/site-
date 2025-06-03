@@ -2,86 +2,92 @@
    RESET BÁSICO
    ============================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove margens padrão de todos os elementos */
+  padding: 0; /* Remove preenchimento padrão */
+  box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho total */
 }
 
 /* =============================
    CONFIGURAÇÃO BASE DO HTML/BODY
    ============================= */
 html, body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  position:relative;
-  overflow-x: hidden;
-  /*background-image: url('../img/fundo.png');
+  min-height: 100%; /* Garante que o body ocupe toda a altura da tela */
+  margin: 0; /* Remove margem padrão */
+  padding: 0; /* Remove padding padrão */
+  font-family: 'Arial', sans-serif; /* Define a fonte principal */
+  position: relative; /* Necessário para elementos posicionados dentro do body */
+  overflow-x: hidden; /* Impede rolagem horizontal */
+
+  /* Comentado: configuração de fundo com imagem
+  background-image: url('../img/fundo.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 120% auto;
-  background-attachment: scroll;*/
+  background-attachment: scroll;
+  */
 
-  /* removi display: flex para não forçar layout flex vertical */
+  /* Comentário: removido display:flex para evitar layout vertical forçado */
 }
 
 /* =============================
    TOPO FIXO
    ============================= */
 .Topo {
-  background: #111111;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
+  background: #111111; /* Cor de fundo escura */
+  height: 100px; /* Altura do topo */
+  width: 100%; /* Largura total */
+  display: flex; /* Usa flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: space-between; /* Espaço entre logo e itens do menu */
+  position: fixed; /* Fixa no topo da tela */
   top: 0;
   left: 0;
-  z-index: 1000;
-  box-shadow: 0px 4px 6px #696969;
-  padding: 0 20px;
+  z-index: 1000; /* Mantém o topo acima de outros elementos */
+  box-shadow: 0px 4px 6px #696969; /* Sombra na parte inferior */
+  padding: 0 20px; /* Espaçamento lateral interno */
 }
 
 /* =============================
    CONTEÚDO PRINCIPAL
    ============================= */
 .corpo {
-  margin-top: 120px; /* espaço para o topo fixo */
-  padding-bottom: 40px; /* um espaçamento para não encostar no rodapé */
-  height:1000px;
-  width:100%;
-  /* não flex, layout normal */
+  margin-top: 120px; /* Espaço acima para compensar o topo fixo */
+  padding-bottom: 40px; /* Espaço inferior para o rodapé */
+  height: 650px; /* Altura fixa (poderia ser ajustável) */
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding:12px;
+  /* Layout padrão, não usa flex */
 }
 
 /* =============================
    RODAPÉ FIXADO AO FIM
    ============================= */
 .rodape {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0px -4px 9px #696969;
+  background-color: #222; /* Cor de fundo escura */
+  color: #fff; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px; /* Espaçamento interno */
+  box-shadow: 0px -4px 9px #696969; /* Sombra superior */
   width: 100%;
-  bottom:0;
-  /* sem position fixed ou absolute */
+  bottom: 0; /* Posição na parte inferior */
+  /* Não está fixo ou absoluto, segue o fluxo normal */
 }
 .link_rodape {
-	color:gray;
-	text-decoration:none;
-	
+  color: gray; /* Cor do link */
+  text-decoration: none; /* Remove sublinhado */
 }
 .link_rodape:hover {
-	text-decoration:line;
-	
+  text-decoration: line; /* (Provavelmente deveria ser 'underline') */
 }
+
 /* =============================
    LOGO
    ============================= */
 .img {
-  height: 80px;
+  height: 80px; /* Altura da imagem da logo */
 }
 
 /* =============================
@@ -89,24 +95,24 @@ html, body {
    ============================= */
 .menu {
   display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
+  align-items: center;
+  justify-content: flex-start; /* Alinha os itens à esquerda */
   width: 100%;
-  padding-left: 50px;
+  padding-left: 50px; /* Espaçamento à esquerda */
 }
 
 .menu-links {
   display: flex;
-  gap: 20px;
+  gap: 20px; /* Espaço entre os itens do menu */
 }
 
 .menu-login {
   display: flex;
   align-items: center;
 }
+
 .menu_item {
-  position: relative;
+  position: relative; /* Para aplicar o ::before */
   display: inline-block;
   color: white;
   text-decoration: none;
@@ -115,54 +121,54 @@ html, body {
   text-align: center;
   font-weight: bold;
   letter-spacing: 0.5px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Transição suave da cor */
 }
 
 .menu_item::before {
-  content: '';
+  content: ''; /* Elemento decorativo */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  z-index: -1;
+  background: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+  z-index: -1; /* Fica atrás do texto */
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.9); /* Inicia um pouco menor */
   transition: opacity 0.3s ease, transform 0.3s ease;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color:white;
 }
 
 .menu_item:hover::before {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1); /* Aumenta ao passar o mouse */
 }
 
 .menu_item:hover {
-  color: #ffcc00;
+  color: white; /* Garante que a cor do texto continue branca */
 }
-
 
 /* =============================
    LOGIN E DROPDOWN
    ============================= */
 .login-wrapper {
-  position: relative;
+  position: relative; /* Para posicionar o dropdown */
 }
 
 .avatar {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 50%; /* Torna circular */
   border: 3px solid black;
   cursor: pointer;
 }
 
 .dropdown-menu {
-  display: none;
+  display: none; /* Inicialmente escondido */
   position: absolute;
-  top: 50px;
+  top: 50px; /* Abaixo do avatar */
   right: 0;
   background: black;
   color: white;
@@ -175,45 +181,88 @@ html, body {
 }
 
 .login-wrapper:hover .dropdown-menu {
-  display: block;
+  display: block; /* Mostra ao passar o mouse */
 }
 
 /* =============================
    CONTÉUDO PRINCIPAL SEÇÕES
    ============================= */
-.img_lado {
-  width: 20%;
-  height: auto;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.texto-central {
+  background: rgba(17, 17, 17, 0.9); /* Fundo escuro com leve transparência */
+  border-radius: 12px; /* Bordas arredondadas */
+  border: 2px solid black; /* Contorno lavanda suave para destaque */
+  padding: 25px 30px; /* Espaçamento interno */
+  height: 400px; /* Altura fixa */
+  width: 650px; /* Largura fixa */
+  display: flex; /* Flexbox para centralizar conteúdo */
+  flex-direction: column; /* Alinhamento vertical */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  color: white; /* Tom lavanda suave para o texto */
+  font-family: 'Poppins', sans-serif; /* Fonte moderna */
+  font-weight: 600; /* Peso da fonte */
+  font-size: 18px; /* Tamanho da fonte */
+  line-height: 1.5; /* Espaçamento entre linhas */
+  text-align: center; /* Centraliza o texto */
+  box-shadow:
+    0 0 10px rgba(0, 0, 0, 0.6), /* Leve brilho lavanda */
+    0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra leve */
+  user-select: text; /* Permite seleção de texto */
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
 }
 
-.centro {
-  background-color: rgba(0, 0, 0, 0.85);
-  color: white;
-  width: 60%;
-  min-height: 600px;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
+.texto-central:hover {
+  border-color: #343434; /* Cor da borda ao passar o mouse */
+  box-shadow:
+    0 0 18px rgba(0, 0, 0, 0.8), /* Brilho mais intenso no hover */
+    0 6px 20px rgba(0, 0, 0, 0.25); /* Sombra mais intensa no hover */
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+  transform: translateY(-4px); /* Leve elevação no hover */
 }
+.botao {
+  background-color: #9B9B9B;
+  color: black;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 260px;
+  margin-bottom: 10px;
+  margin-top:10px;
+  text-decoration:none;
+  height:50px;
+}
+
+.botao:hover {
+  background-color: #696969;
+}
+
+
+
+
 
 /* =============================
    SCROLLBAR PERSONALIZADA
    ============================= */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 10px; /* Largura da barra de rolagem */
 }
 
 ::-webkit-scrollbar-track {
-  background: black;
+  background: black; /* Cor do trilho */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #888; /* Cor do "polegar" da barra */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #555; /* Cor ao passar o mouse */
 }
 
 /* =============================
@@ -232,7 +281,7 @@ html, body {
 }
 
 .b:hover {
-  background-color: #7a7a7a;
+  background-color: #7a7a7a; /* Muda a cor ao passar o mouse */
 }
 
 .menu_l {
@@ -247,10 +296,9 @@ html, body {
 }
 
 .menu_l:hover {
-  color: #444;
-  transform: scale(1.05);
+  color: white;
+  transform: scale(1.05); /* Aumenta levemente o botão */
 }
-
 
 /* =============================
    BOTÕES AO ESTAR LOGADO
@@ -261,28 +309,32 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  border:5px black;
+  gap: 50px;
+  border: 5px black;
   border-radius: 6px;
   color: white;
   padding: 0 10px;
   cursor: pointer;
+  text-align:center;
 }
 
 .b5 span {
   font-weight: bold;
   font-size: 14px;
+  text-align:center;
 }
+
+/* =============================
+   VÍDEO DE FUNDO
+   ============================= */
 #video-fundo {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: fill; /* Encaixa sem cortar */
-  z-index: -1;
-  opacity: 0.7
-  pointer-events: none;
+  object-fit: fill; /* Faz o vídeo preencher todo o espaço */
+  z-index: -1; /* Fica atrás de todo o conteúdo */
+  opacity: 1; /* Transparência para não distrair o usuário */
+  pointer-events: none; /* Não interfere na interação */
 }
-
-
