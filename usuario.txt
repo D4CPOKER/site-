@@ -1,12 +1,1 @@
-davicamillo2009@gmail.com;SUNG JIN WOO;davi;$2y$10$QgOHUbanpVeY24ej.C7ET.OVoxZ0JZyAhqETvy16CB.O4d6dYMZMq;12/3/1999
-davicamillo2009@gmail.com;SUNG JIN WOO;davi;$2y$10$TjMbsZ0k.xr0J7y.PnP5jeoIVgUWSeedB6QbBvVTox0zGe3cJS5h.;6/5/1945
-davicamillo2009@gmail.com;SUNG JIN WOO;davi;$2y$10$Ejtyj8VsMZO92pNeE5eNteafnK9kC.Dd446OC12jPBD81htU4z78q;6/5/1945
-davicamillo2009@gmail.com;SUNG JIN WOO;davi;$2y$10$0ZyGDSvH1hi.Q/oy0mD1eebKv7koEmx2pMG3NFOS2j./OPDZFPjlm;6/5/1945
-davicamillo2009@gmail.com;SUNG JIN WOO;davi;$2y$10$QcjfMtgpxfFwOAhcIRiYCu9CHrTPqf6UB.Y9e/r/HMVYNx4IbUmra;6/5/1945
-mateusmarafon647@gmail.com;Marafas;Marafas;$2y$10$ZacBXaqtBIw2kd.SnXU7V.Ysgi/wZw5kLLD8gKDy0hJZ3yuI3HkI2;10/8/2009
-davicamillo2009@gmail.com;MMMBANANA;123;$2y$10$K82wCN80staszFym8ZJIreUfQzpp1Nf2IvHK34GOJM6Njkiurd8fG;12/3/2023
-marafon6969@yahoo.santarosa;kelvin;kekeldelass;$2y$10$rZ1vnikKm3f/SFDbuM1fmuWDRS.Et7FCC56a9Yv6aIIFLCIpzKonK;11/9/2001
-davicamillo2009@gmail.com;sunj;davi;$2y$10$jXk8RvBW1g6aAYXTYeSouencyuDvIUfUaJHdRiBLbSwE3WjoxRYwa;12/10/2008
-davicamillo2009@gmail.com;123;123;$2y$10$nPVPR0wc7y8TjWEgK6jJsuwq/Y6qii5aeELKZOuDXh9wozrQlQvEm;12/2/2025
-davicamillo2009@gmail.com;SUNG JIN WOO;davi;$2y$10$QA9rFb4Qlp.8l/Eloz.h8O37frrPwj4MZnQ9MQ7KDbZF3axA4ZIua;12/10/2009
-gabrielzarpelondo@gmail.com;Zarpelongabi;Zarpelongabi;$2y$10$aLazXfSt/bjF2Bzs668XbeM7N4RivgKv6WPl/vKmnHtYKtYhQ8iu6;3/1/1999
+
