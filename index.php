@@ -26,7 +26,7 @@
 <div class="menu">
   <!-- Itens principais do menu -->
   <nav class="menu-links">
-    <a class="menu_item" href="#">HISTÓRIA</a>
+    <a class="menu_item" href="historia.php">HISTÓRIA</a>
     <a class="menu_item" href="#">COMO JOGAR</a>
     <a class="menu_item" href="#">INVENTÁRIO</a>
     <a class="menu_item" href="#">APOIE</a>
@@ -55,8 +55,20 @@
     </div> <!-- Fecha o .menu -->
   </div> <!-- Fecha o .Topo -->
 
-  <div class="corpo"> <!-- Área principal da página -->
-    <!-- Conteúdo do site pode ser inserido aqui -->
+  <div class="corpo">
+  <!-- Área principal da página -->
+    <div class="texto-central"> 
+	<p>"Você acorda no escuro. O ar é pesado, o cheiro, insuportável. Sua mente? Um vazio completo. Você não sabe quem é… ou quem foi.
+
+Algo ou alguem esta tentanto se comunicar, mas em sua fraqueza você não percebe .
+
+Uma dor aguda na cabeça. Um lampejo: luz… um rosto… e desaparece.
+
+Ao longe, uma porta entreaberta deixa escapar uma luz fraca. Você segue, tocando símbolos estranhos nas paredes — eles brilham ao seu toque.
+
+Do outro lado da porta, um novo mundo espera. E talvez, nele, você descubra a verdade… ou se perca de vez.</p>
+<a href="dowload.php" class="botao">desvende o misterio ...</a>
+	</div>
   </div>
 </body>
 <footer>
