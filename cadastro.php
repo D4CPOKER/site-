@@ -60,7 +60,7 @@
 
 				// Marca login como bem-sucedido
 				$_SESSION['login_sucesso'] = true;
-				$_SESSION['usuario'] = $user;  
+				$_SESSION['usuario'] = $usuario;  
 				$login_sucesso = true;
 			}
 		}
@@ -73,6 +73,22 @@
 	}
 
 	?>
+	<?php
+// Array de meses para datalist e validação futura
+$meses = [
+    1 => 'Janeiro', 2 => 'Fevereiro', 3 => 'Março', 4 => 'Abril',
+    5 => 'Maio', 6 => 'Junho', 7 => 'Julho', 8 => 'Agosto',
+    9 => 'Setembro', 10 => 'Outubro', 11 => 'Novembro', 12 => 'Dezembro'
+];
+
+$anoAtual = date("Y");
+
+// Função auxiliar para preservar valor digitado
+function manterValor($campo) {
+    return isset($_POST[$campo]) ? htmlspecialchars($_POST[$campo]) : '';
+}
+?>
+	
 	<!DOCTYPE html>
 	<html lang="pt-BR">
 	<head>
@@ -80,19 +96,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
 		<title>Cadastro</title> <!-- Título da aba -->
 		<link rel="stylesheet" href="css/c.css"> <!-- Estilos CSS -->
-				<link rel="icon" type="image/png" href="img/c.png">
+		<link rel="icon" type="image/png" href="img/caveira1.png">
 		
 	</head>
 
 	<body class="corpo">
 		<!-- Botão de voltar com imagem -->
-		
-		    <a href="index.php" class="voltar">
-        <img class="img" src="img/l.png" alt="Logo" />
-    </a>
+		<video autoplay muted loop playsinline id="video-fundo">
+  <source src="vid/fundo.mp4" type="video/mp4" />
+  Seu navegador não suporta vídeo HTML5.
+</video>
 
 		<div class="form-login">
 			<form method="POST">
+			<a href="index.php" class="voltar">
+				<p class="voltar">-</p>
+			</a>
 				<h1 class="titulo">Crie sua conta </h1>
 
 				<!-- Campo de e-mail -->
@@ -126,53 +145,58 @@
 
 				<!-- Campos para data de nascimento -->
 				<div class="datas">
-					<!-- Dia -->
-					<div class="input-group2">
-						<select name="dia" class="input" required>
-							<option value="" disabled selected hidden></option>
-							<script>
-								for (let i = 1; i <= 31; i++) {
-									document.write(`<option value="${i}">${i}</option>`);
-								}
-							</script>
-						</select>
-						<label class="label">Dia</label>
-					</div>
+<!-- Campo: Dia -->
+<div class="input-group2">
+    <input
+        type="number"
+        id="dia"
+        name="dia"
+        class="input"
+        min="1"
+        max="31"
+        placeholder="Dia"
+        required
+        value="<?= manterValor('dia') ?>"
+    >
+    <label for="dia" class="label">Dia</label>
+</div>
 
-					<!-- Mês -->
-					<div class="input-group2">
-						<select name="mes" class="input" required>
-							<option value="" disabled selected hidden></option>
-							<option value="1">Janeiro</option>
-							<option value="2">Fevereiro</option>
-							<option value="3">Março</option>
-							<option value="4">Abril</option>
-							<option value="5">Maio</option>
-							<option value="6">Junho</option>
-							<option value="7">Julho</option>
-							<option value="8">Agosto</option>
-							<option value="9">Setembro</option>
-							<option value="10">Outubro</option>
-							<option value="11">Novembro</option>
-							<option value="12">Dezembro</option>
-						</select>
-						<label class="label">Mês</label>
-					</div>
+<!-- Campo: Mês com datalist -->
+<div class="input-group2">
+    <input
+        type="text"
+        id="mes"
+        name="mes"
+        class="input"
+        list="listaMeses"
+        placeholder="Mês"
+        required
+        value="<?= manterValor('mes') ?>"
+    >
+    <label for="mes" class="label">Mês</label>
+    <datalist id="listaMeses">
+        <?php foreach ($meses as $num => $nome): ?>
+            <option value="<?= $nome ?>"><?= $nome ?></option>
+        <?php endforeach; ?>
+    </datalist>
+</div>
 
-					<!-- Ano -->
-					<div class="input-group2">
-						<select name="ano" class="input" required>
-							<option value="" disabled selected hidden></option>
-								<?php
-									$anoAtual = date("Y");
-									for ($i = $anoAtual; $i >= 1900; $i--) {
-									echo "<option value=\"$i\">$i</option>";
-									}
-								?>
-						</select>
-						<label class="label">Ano</label>
-					</div>
-				</div>
+<!-- Campo: Ano -->
+<div class="input-group2">
+    <input
+        type="number"
+        id="ano"
+        name="ano"
+        class="input"
+        min="1900"
+        max="<?= $anoAtual ?>"
+        placeholder="Ano"
+        required
+        value="<?= manterValor('ano') ?>"
+    >
+    <label for="ano" class="label">Ano</label>
+</div>
+</div>
 				
 
 			<!-- Botão de envio -->
