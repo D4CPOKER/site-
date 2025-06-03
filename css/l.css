@@ -1,206 +1,289 @@
-
-/* ===== RESET BÁSICO ===== */
+/* =========================
+   RESET GERAL
+========================= */
 * {
-  margin: 0;                /* Remove margens padrão de todos os elementos */
-  padding: 0;               /* Remove espaçamentos internos padrão */
-  box-sizing: border-box;   /* Faz com que o padding e a borda sejam incluídos na largura total */
+  margin: 0;                /* Remove margens padrão */
+  padding: 0;               /* Remove preenchimento padrão */
+  box-sizing: border-box;   /* Inclui padding e border no cálculo total do elemento */
 }
 
-/* ===== BODY E CONTAINER PRINCIPAL ===== */
-body {
-  font-family: 'Arial', sans-serif;  /* Define a fonte principal do site */
-  background-color: black;         /* Define o fundo escuro da página */
-  color: #e0e0e0;                    /* Cor do texto principal (cinza claro) */
-  margin: 0;                         /* Remove margens externas */
-  padding: 40px;                     /* Espaçamento interno da página */
-  display: flex;                     /* Usa flexbox para o layout */
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
+/* =========================
+   ESTILO GLOBAL DO BODY
+========================= */
+body.corpo {
+  font-family: 'Arial', sans-serif;                      /* Fonte padrão */
+  color: #e0e0e0;                                        /* Cor padrão do texto */
+  min-height: 100vh;                                     /* Altura mínima de 100% da viewport */
+  padding: 40px;                                         /* Espaço interno */
+  display: flex;                                         /* Usa flexbox */
+  flex-direction: row;
   justify-content: center;
-  background-size: cover; /* A imagem cobre toda a tela */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Não repete a imagem */
-  font-family: 'Arial', sans-serif; /* Fonte padrão */
-  background: url('../img/fundo.png'); 
+  align-items: center;                                   /* Centraliza horizontalmente */
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
 }
-.frase {
-	width:90%;
-	font-size:12px;
-	display:flex;
-	    justify-content: center;
-}
-.container {
-  background-color: #1e1e1e;        /* Cor de fundo do contêiner (mais clara que o fundo da página) */
-  padding: 30px;                    /* Espaçamento interno */
-  border-radius: 10px;              /* Bordas arredondadas */
-  box-shadow: 0px 0px 15px white;  /* Sombra ao redor do contêiner */
-  width: 100%;                      /* Ocupa toda a largura possível */
-  max-width: 420px;                 /* Limita a largura máxima */
+#video-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Encaixa sem cortar */
+  z-index: -1;
+  opacity: 0.7
+  pointer-events: none;
 }
 
-/* ===== TÍTULO ===== */
-.titulo {
-  font-size:30px;
-  margin-bottom: 5px;             /* Espaço abaixo do título */
-  margin-top:50px;
-  color: white;                    /* Cor do texto do título (pode ser ajustada para combinar com fundo escuro) */
+  /* removi display: flex para não forçar layout flex vertical */
+  
 }
-.sub_tit {              
-  margin-bottom: 30px;             /* Espaço abaixo do título */
-  text-align: center;              /* Centraliza o texto */
+
+
+/* =========================
+   LOGO SUPERIOR FIXA
+========================= */
+.voltar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  z-index: 10;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 8px 0; /* canto inferior direito arredondado */
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.seta{
+}
+
+/* =========================
+   TÍTULO DO FORMULÁRIO
+========================= */
+.titulo {
+  font-size: 30px;         /* Tamanho da fonte */
+  margin-bottom: 10px;     /* Espaço abaixo do título */
+  color: white;            /* Cor do texto */
+  text-align:center;
+}
+.sub-tit {
+  font-size: 15px;         /* Tamanho da fonte */
+  margin-bottom: 50px;     /* Espaço abaixo do título */
+  color: white;            /* Cor do texto */
+  text-align:center;
+}
+/* =========================
+   SETA VOLTAR (AJUSTADA)
+========================= */
+.voltar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  z-index: 10;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  border-radius: 0 0 8px 0;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.voltar:hover {
   color: white;
 }
 
-
-/* ===== FORMULÁRIO ===== */
-.formulario {
-  display: flex;                   /* Usa flexbox */
-  flex-direction: column;         /* Coloca os elementos em coluna */
-  gap: 20px;     /* Espaçamento entre os elementos filhos */
+/* =========================
+   FORMULÁRIO DE LOGIN
+========================= */
+.form-login {
+  position: relative; /* ADICIONE ESTA LINHA */
+  background: #232323; /* Fundo escuro com gradiente */
+  padding: 30px;                /* Espaçamento interno */
+  border-radius: 10px;          /* Arredondamento das bordas */
+  box-shadow: 0px 0px 15px black; /* Sombra externa */
+  width: 500px;                 /* Largura fixa */
+  height: 400px;                /* Altura do formulário */
+  max-height: 700px;            /* Altura máxima */
+  display: flex;                /* Ativa flexbox */
+  flex-direction: column;       /* Coluna */
+  align-items: center;          /* Alinhamento horizontal */
+  justify-content: space-evenly;/* Espaço uniforme entre os filhos */
+  animation: fadeInUp 1s ease-in-out both; /* Animação de entrada */
+  margin-top:150px;
 }
 
-.rotulo {
-  font-size: 0.95em;               /* Tamanho do texto dos rótulos */
-  font-weight: bold;              /* Deixa os rótulos em negrito */
-  margin-bottom: 5px;             /* Espaço abaixo do rótulo */
-  color: #bbb;                    /* Cor do rótulo (cinza claro) */
-  text-align: left;               /* Alinha o rótulo à esquerda */
-}
-
-/* ===== CAMPOS DE FORMULÁRIO ===== */
-.campo-selecao,
-.campo-numero {
-  padding: 12px;                  /* Espaçamento interno */
-  font-size: 12px;                 /* Tamanho da fonte */
-  border-radius: 5px;             /* Bordas arredondadas */
-  border: 1px solid #444;         /* Borda escura */
-  background-color: #2b2b2b;      /* Fundo do campo (cinza escuro) */
-  color: #e0e0e0;                 /* Cor do texto */
-  transition: border-color 0.3s;  /* Animação suave ao focar */
-}
-
-.campo-selecao:focus,
-.campo-numero:focus {
-  border-color: #00c853;          /* Cor verde quando o campo recebe foco */
-  outline: none;                  /* Remove o contorno azul padrão */
-}
-.voltar {
-	text-decoration:none;
-	color:white;
-	display:flex;
-}
-
-/* ===== BOTÃO ===== */
-.botao {
-  background-color: #9B9B9B;      /* Cor de fundo verde */
-  color: black;                    /* Cor do texto (branco) */
-  border: none;                   /* Remove borda padrão */
-  padding: 12px;                  /* Espaçamento interno */
-  border-radius: 5px;             /* Bordas arnho da fonte */
-  cursor: pointer;               /* Muda o cursredondadas */
-  font-size: 1em;                 /* Tamaor para ponteiro */
-  transition: background-color 0.3s;  /* Animação ao passar o mouse */
-  margin-bottom:20px;
-  height:40px;
-  width:420px;
-  display:flex;
-  margin-left:50px;
-  justify-content: center; /* Alinha horizontalmente */
-  align-items: center;     /* Alinha verticalmente */
-}
-
-.botao:hover {
-  background-color:  #696969;      /* Tom mais escuro de verde ao passar o mouse */
-}
-
-/* ===== RESULTADO ===== */
-.resultado {
-  margin-top: 25px;               /* Espaço acima do bloco de resultado */
-  padding: 15px;                  /* Espaçamento interno */
-  background-color: #263238;      /* Fundo do bloco de resultado (azul acinzentado escuro) */
-  color: #a5d6a7;                 /* Texto em verde claro */
-  border: 1px solid #4caf50;      /* Borda verde */
-  border-radius: 6px;             /* Bordas arredondadas */
-  font-size: 1.1em;               /* Tamanho da fonte um pouco maior */
-  text-align: center;             /* Centraliza o conteúdo */
-}
-
-/* ===== INPUT COM LABEL FLUTUANTE ===== */
+/* =========================
+   GRUPOS DE INPUT COM LABEL FLUTUANTE
+========================= */
 .input-group {
-  font-size: 1.25rem;             /* Tamanho da fonte */
-  position: relative;             /* Permite posicionar a label sobre o input */
-  color: #6c63ff;                 /* Cor padrão do label */
-  width: 500px;                   /* Largura do grupo */
+  position: relative;       /* Permite posicionamento da label dentro */
+  width: 350px;               /* Largura total */
+  margin-bottom: 25px;      /* Espaço inferior */
 }
 
 .input {
-  font-size:15px;
-  all: unset;                     /* Remove todos os estilos padrão */
-  border: 1px solid gray;         /* Borda cinza */
-  width: 100%;                    /* Ocupa toda a largura */
-  border-radius: 6px;             /* Bordas arredondadas */
-  color: white;                   /* Cor do texto */
-  transition: border 0.3s;        /* Animação na borda */
-  background-color: transparent;  /* Fundo transparente */
-  height:35px;
-  width:400px;
-  display:flex;
-  margin-left:50px;
-  padding: 10px;
+  all: unset;                 /* Remove todos os estilos padrões */
+  width: 100%;                /* Preenche toda a largura */
+  padding: 12px;              /* Espaçamento interno */
+  border: 1px solid gray;     /* Borda cinza */
+  border-radius: 6px;         /* Bordas arredondadas */
+  background-color: transparent; /* Fundo transparente */
+  color: white;               /* Texto branco */
+  font-size: 15px;            /* Tamanho da fonte */
+  transition: border 0.3s;    /* Animação de transição */
 }
 
 .label {
-  margin-left:50px;
-  position: absolute;             /* Posição absoluta em relação ao input-group */
-  top: 1rem;                      /* Distância do topo */
-  left: 0.5rem;                   /* Distância da esquerda */
-  color: gray;                    /* Cor do texto inicial da label */
-  pointer-events: none;          /* Ignora cliques do usuário */
-  transition: 0.2s ease all;     /* Animação suave ao mover a label */
+  position: absolute;         /* Posição flutuante dentro do grupo */
+  top: 12px;
+  left: 12px;
+  color: gray;
+  pointer-events: none;       /* Não interagível */
+  transition: 0.2s ease all;
+  background: transparent;
+  padding: 0 4px;
+  font-size: 15px;
 }
 
+/* Ativa estilo quando input está focado ou preenchido */
 .input:focus,
 .input:valid {
-  border: 1px solid white;        /* Destaca a borda quando focado ou preenchido */
+  border: 1px solid white;
 }
 
 .input:focus + .label,
 .input:valid + .label {
-  transform: translateY(-1.5rem) scale(0.8);  /* Move e diminui o tamanho da label */
-  background:#232323;                 /* Fundo escuro (cor do body) */
-  padding: 0 0.25rem;                        /* Espaçamento lateral para o recorte */
-  color: white;                              /* Muda a cor da label */
+  transform: translateY(-18px) scale(0.85);
+  color: white;
+  background: #232323;
 }
 
-/* Corrige preenchimento automático do Chrome */
+/* Ajuste do autofill no Chrome */
 input:-webkit-autofill {
-  box-shadow: 0 0 0 1000px transparents inset;      /* Remove o fundo amarelo do autofill */
-  -webkit-text-fill-color: white;           /* Define cor do texto como preta ##232323, #111111, #000000*/
+  box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-text-fill-color: Black;
 }
-/* LOGO */
-.img {
-  position: absolute;   /* Permite posicionamento livre */
-  top: 20px;            /* Distância do topo */
-  left: 20px;           /* Distância da esquerda */
-  height: 60px;         /* Tamanho da imagem */
-  z-index: 10;          /* Garante que a imagem fique acima dos demais elementos */
-}
-/* ===== BLOCO EXTRA (.fund) ===== */
-.fund {
-  height: 400px;
-  width: 800px;
-  background: #232323;  /* Corrigido */
-  display: flex;
-  border-radius: 2px;
-  padding: 5px;
-  box-shadow: 5px 10px 20px black;
-  flex-direction: column;
-  align-items: center;
-  float:center;
 
+
+/* =========================
+   BOTÃO DE ENVIO
+========================= */
+.botao {
+  background-color: #9B9B9B;
+  color: black;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 380px;
+  margin-bottom: 10px;
+  margin-top:10px;
 }
-/* ===== ANIMAÇÃO DE ENTRADA ===== */
+
+.botao:hover {
+  background-color: #696969;
+}
+
+/* =========================
+   FRASE E LINKS AUXILIARES
+========================= */
+.frase {
+  width: 90%;
+  font-size: 12px;
+  text-align: center;
+  color: #555;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.frase a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.frase a:hover {
+  text-decoration: underline;
+}
+
+.login-link {
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   MENSAGEM DE ERRO
+========================= */
+.mensagem {
+  text-align: center;
+  color: red;
+}
+
+/* =========================
+   BARRA DE ROLAGEM PERSONALIZADA
+========================= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Scroll personalizado dentro de campos input (select etc) */
+.input::-webkit-scrollbar {
+  width: 8px;
+}
+.input::-webkit-scrollbar-track {
+  background: #232323;
+  border-radius: 4px;
+}
+.input::-webkit-scrollbar-thumb {
+  background-color: #8C11B6;
+  border-radius: 4px;
+}
+.input::-webkit-scrollbar-thumb:hover {
+  background-color: gray;
+}
+
+/* =========================
+   ANIMAÇÃO DE ENTRADA
+========================= */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -211,27 +294,3 @@ input:-webkit-autofill {
     transform: translateY(0);
   }
 }
-
-.fund {
-  animation: fadeInUp 1s ease-in-out both;
-}
-/* ESTILOS PARA A BARRA DE ROLAGEM (SOMENTE NO CHROME/EDGE) */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: black;
-}
-a {
-	color:blue;
-}
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
